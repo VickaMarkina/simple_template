@@ -1,0 +1,70 @@
+.bottom-sidebar {
+  background-color: $light-color;
+  grid-area: b;
+  padding: $gutter;
+  display: flex;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: calc(100% - 28px);
+    width: calc(100% - 28px);
+    border: 1px solid #dddd;
+    top: 14px;
+    left: 14px;
+  }
+
+  &__left {
+    background-color: #ffff;
+    display: flex;
+    padding: 20px $gutter 20px $gutter;
+    align-items: flex-start;
+    border-left: 5px solid #ffff;
+    border-bottom: 5px solid #ffff;
+    border-top: 5px solid #ffff;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f5f5f5 50%,
+      #eeeeee 100%
+    );
+  }
+
+  &__right {
+    display: flex;
+    background-color: #ffff;
+    padding: 20px $gutter 20px $gutter;
+    align-items: flex-start;
+    border-right: 5px solid #ffff;
+    border-bottom: 5px solid #ffff;
+    border-top: 5px solid #ffff;
+    position: relative;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f5f5f5 50%,
+      #eeeeee 100%
+    );
+
+    &::before {
+      content: "";
+      height: 100%;
+      border-left: 1px solid #dddd;
+      position: absolute;
+      top: 0px;
+      left: -1px;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    line-height: 1.5rem;
+    display: flex;
+  }
+
+  img {
+    padding: 0 $gutter $gutter 0;
+    border-style: none;
+  }
+}

@@ -1,0 +1,33 @@
+.left-sidebar {
+  background-color: $light-color;
+  grid-area: l;
+  padding: 0 $gutter $gutter 20px;
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    position: relative;
+    padding: 7.5px;
+    &::before {
+      content: url(../img/main-list-arrow.png);
+      position: absolute;
+      left: -7.5px;
+    }
+  }
+
+  span {
+    font-style: italic;
+    line-height: 1.5rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-bottom: 1px solid #dddd;
+      bottom: -10px;
+    }
+  }
+}

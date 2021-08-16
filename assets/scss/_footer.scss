@@ -1,0 +1,118 @@
+.footer {
+  background-color: rgba(#0000, 0.4);
+  width: 100%;
+
+  .wrapper {
+    margin: 37px auto 0 auto;
+    display: grid;
+
+    @media (min-width: $large + 1) {
+      grid-template-areas: "l r";
+      grid-template-columns: 330px 1fr;
+    }
+
+    @media (max-width: $large) and (min-width: $small + 1) {
+      grid-template-areas: "l r";
+    }
+
+    @media (max-width: $small) {
+      grid-template-areas: "l" "r";
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-left {
+    grid-area: l;
+  }
+
+  &-right {
+    grid-area: r;
+
+    .copyright {
+      margin: 57px 0 $gutter $gutter;
+      color: #ffff;
+      padding-right: 15px;
+
+      @media (min-width: $small + 1) {
+        text-align: end;
+      }
+      @media (max-width: $small) {
+        text-align: center;
+      }
+    }
+
+    .footer-logo {
+      padding-right: 15px;
+
+      @media (min-width: $small + 1) {
+        text-align: end;
+      }
+      @media (max-width: $small) {
+        text-align: center;
+      }
+    }
+
+    .menu {
+      &__list {
+        padding-left: 0;
+
+        &-item {
+          a {
+            font-size: 0.9rem;
+            padding: 12px 15px 12px 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.twitter {
+  display: grid;
+  grid-template-areas: "i d" "p p";
+  grid-template-columns: 55px 1fr;
+
+  &__image {
+    grid-area: i;
+  }
+
+  &__description {
+    grid-area: d;
+
+    &-title {
+      color: #ffff;
+      font-size: 2rem;
+      line-height: 2.3rem;
+    }
+
+    &-slogan {
+      color: #727272;
+    }
+  }
+
+  &__post {
+    grid-area: p;
+    padding: 20px;
+    margin: 12px 30px 30px 37px;
+    background-color: rgba(black, 0.4);
+    border-radius: 10px;
+    position: relative;
+
+    &-text {
+      line-height: 1.5rem;
+    }
+
+    &-date {
+      color: $accent-color;
+      font-style: italic;
+      font-size: 0.83rem;
+    }
+
+    &::before {
+      content: url(../img/twitter-speech-bubble.png);
+      position: absolute;
+      left: 0px;
+      top: -19px;
+    }
+  }
+}

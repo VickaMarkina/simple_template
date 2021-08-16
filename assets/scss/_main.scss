@@ -1,0 +1,24 @@
+.main {
+  background-color: $light-color;
+  grid-area: m;
+  padding: 0 20px $gutter $gutter;
+  position: relative;
+
+  &::before {
+    content: "";
+    height: 90%;
+    border-left: 1px solid #dddd;
+    position: absolute;
+    top: 15px;
+    left: -1px;
+  }
+
+  p {
+    text-align: justify;
+
+    span {
+      font-style: italic;
+      color: black;
+    }
+  }
+}
