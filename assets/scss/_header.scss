@@ -1,6 +1,12 @@
 .header {
-  display: grid;
-  grid-template-columns: auto 1fr;
   align-items: center;
-  margin: 34px 0 34px 0;
+  @media (min-width: $large + 1) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin: 34px 0 34px 0;
+  }
+
+  @media (max-width: $large) {
+    margin: 34px 0 35px 0;
+  }
 }

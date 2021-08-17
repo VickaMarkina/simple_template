@@ -29,20 +29,26 @@
     grid-area: r;
 
     .copyright {
-      margin: 57px 0 $gutter $gutter;
       color: #ffff;
-      padding-right: 15px;
 
-      @media (min-width: $small + 1) {
-        text-align: end;
+      @media (min-width: $large + 1) {
+        margin: 55px $gutter 0 $gutter;
+        text-align: right;
       }
+
+      @media (max-width: $large) and (min-width: $small + 1) {
+        margin: 75px $gutter 0 $gutter;
+        text-align: right;
+      }
+
       @media (max-width: $small) {
+        margin: 30px $gutter 0 $gutter;
         text-align: center;
       }
     }
 
     .footer-logo {
-      padding-right: 15px;
+      padding: 15px;
 
       @media (min-width: $small + 1) {
         text-align: end;

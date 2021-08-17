@@ -44,9 +44,18 @@ h2 {
 }
 
 h3 {
-  margin: 15px 0 15px 0;
   text-transform: uppercase;
-  color: $light-color;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 400;
+
+  @media (min-width: $small + 1) {
+    margin: 15px 0 15px 0;
+  }
+
+  @media (max-width: $small) {
+    margin: -2px 0 15px 0;
+  }
 }
 
 p {

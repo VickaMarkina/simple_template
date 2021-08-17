@@ -2,8 +2,10 @@
   background-color: $light-color;
   grid-area: b;
   padding: $gutter;
-  display: flex;
   position: relative;
+  @media (min-width: $small + 1) {
+    display: flex;
+  }
 
   &::before {
     content: "";
@@ -15,48 +17,6 @@
     left: 14px;
   }
 
-  &__left {
-    background-color: #ffff;
-    display: flex;
-    padding: 20px $gutter 20px $gutter;
-    align-items: flex-start;
-    border-left: 5px solid #ffff;
-    border-bottom: 5px solid #ffff;
-    border-top: 5px solid #ffff;
-    background: linear-gradient(
-      to bottom,
-      #ffffff 0%,
-      #f5f5f5 50%,
-      #eeeeee 100%
-    );
-  }
-
-  &__right {
-    display: flex;
-    background-color: #ffff;
-    padding: 20px $gutter 20px $gutter;
-    align-items: flex-start;
-    border-right: 5px solid #ffff;
-    border-bottom: 5px solid #ffff;
-    border-top: 5px solid #ffff;
-    position: relative;
-    background: linear-gradient(
-      to bottom,
-      #ffffff 0%,
-      #f5f5f5 50%,
-      #eeeeee 100%
-    );
-
-    &::before {
-      content: "";
-      height: 100%;
-      border-left: 1px solid #dddd;
-      position: absolute;
-      top: 0px;
-      left: -1px;
-    }
-  }
-
   p {
     margin-top: 0;
     line-height: 1.5rem;
@@ -66,5 +26,74 @@
   img {
     padding: 0 $gutter $gutter 0;
     border-style: none;
+  }
+
+  &__left {
+    background-color: #ffff;
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f5f5f5 50%,
+      #eeeeee 100%
+    );
+
+    @media (min-width: $small + 1) {
+      border-left: 5px solid #ffff;
+      border-bottom: 5px solid #ffff;
+      border-top: 5px solid #ffff;
+      flex: 1 0 50%;
+      padding: 20px $gutter 20px $gutter;
+    }
+
+    @media (max-width: $small) {
+      border: 5px solid #ffff;
+      flex: 1 0 100%;
+      padding: $gutter;
+    }
+  }
+
+  &__right {
+    display: flex;
+    background-color: #ffff;
+    align-items: flex-start;
+    position: relative;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f5f5f5 50%,
+      #eeeeee 100%
+    );
+
+    @media (min-width: $small + 1) {
+      border-right: 5px solid #ffff;
+      border-bottom: 5px solid #ffff;
+      border-top: 5px solid #ffff;
+      flex: 1 0 50%;
+      padding: 20px $gutter 20px $gutter;
+      &::before {
+        content: "";
+        height: 100%;
+        border-left: 1px solid #dddd;
+        position: absolute;
+        top: 0px;
+        left: -1px;
+      }
+    }
+
+    @media (max-width: $small) {
+      flex: 1 0 100%;
+      padding: $gutter;
+      border: 5px solid #ffff;
+      p {
+        order: 1;
+      }
+
+      img {
+        order: 2;
+        padding: 0 0 $gutter $gutter;
+      }
+    }
   }
 }
